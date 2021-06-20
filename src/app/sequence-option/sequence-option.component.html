@@ -1,0 +1,20 @@
+<!-- <div [formGroup]="optionsForm">
+    <div formArrayName="options" *ngFor="let item of options.controls; let i=index;">
+        <div [formGroupName]="i">
+            <input type="text" formControlName="text"/>
+            <input type="text" formControlName="ix"/>
+        </div>
+    </div>
+
+    <button (click)="addOption()">Add Option</button>
+</div>
+ -->
+
+
+
+<div *ngFor="let item of options.controls; let i=index;" [formGroup]="toFormGroup(item)">
+    <input type="text" formControlName="text"/>
+    <input type="text" formControlName="ix" [value]="i"/>
+</div>
+
+<button (click)="addOption()">Add Option</button>
